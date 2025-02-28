@@ -145,6 +145,9 @@
             // Set to true to enable an SSH server for the Codespaces environment.
             "enabled": false
         },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        },
         "ghcr.io/Automattic/vip-codespaces/playwright:1": {}
     },
     // *****************************
@@ -161,7 +164,6 @@
                 "johnbillion.vscode-wordpress-hooks",
                 "yechunan.json-color-token",
                 "xdebug.php-debug",
-                "bmewburn.vscode-intelephense-client",
                 "valeryanm.vscode-phpsab",
                 "ms-playwright.playwright",
                 "stylelint.vscode-stylelint"
