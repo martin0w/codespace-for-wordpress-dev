@@ -1,5 +1,5 @@
-# New doc goies here
+# New doc goes here
 
 - Fork repo
 - Commit
-- Marge repo
+- Merge repo
