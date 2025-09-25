@@ -1,3 +1,33 @@
+# Martin's comments 2025-09-25:
+
+## General
+
+This codespace delivers a fully functional Wordpress environment for development of new plugins or themes in a GIt Codespace with VSCode.
+
+The environment is built using Wordpress VIP Codespaces by Automattic, see https://github.com/Automattic/vip-codespaces    
+It sports a modular approach with various features that can be enabled or disabled via `devcontainer.json`.:
+
+- base: Base feature for VIP Codespaces
+- nginx: Nginx web server
+- php: PHP with configurable version
+- mariadb: MariaDB database server
+- wordpress: WordPress core
+- wp-cli: WordPress CLI
+- vip-go-mu-plugins: WordPress VIP MY-plugins
+- vip-cli: VIP CLI
+- elasticsearch: Elasticsearch server
+- memcached: Memcached server
+- xdebug: Xdebug for PHP debugging
+- phpmyadmin: phpMyAdmin for database management
+- mailpit: Mail testing tool
+- cron: Cron job support
+
+## References
+
+- Wordpress VIP Codespaces at Github: https://github.com/Automattic/vip-codespaces
+- Wordpress VIP Codespaces documentaiton: https://docs.wpvip.com/local-development/github-codespaces/  
+
+
 # Upgrading Legacy WordPress Projects: Modernize Workflows and Codebase
 This is the repository for the LinkedIn Learning course `Upgrading Legacy WordPress Projects: Modernize Workflows and Codebase`. The full course is available from [LinkedIn Learning][lil-course-url].
 
