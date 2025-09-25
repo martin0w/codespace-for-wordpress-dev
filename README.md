@@ -22,7 +22,71 @@ It sports a modular approach with various features that can be enabled or disabl
 - mailpit: Mail testing tool
 - cron: Cron job support
 
-## References
+## Installation
+
+Just create a codespace from this repo.
+
+## Manual post-installation options:
+
+### (Recommended) Access WordPress Core files
+By default, WordPress Core files are *not* exposed in the VS Code interface. If needed, these files can be surfaced for reference in the VS Code Explorer panel.
+
+Enter the VS Code Command Palette by either:
+- Right-clicking anywhere in the Explorer panel and selecting “Add Folder to Workspace…“.
+- Or selecting the key combination ⇧⌘P on the keyboard, then enter the prompt Add folder to workspace.
+- In the Command Palette field, highlight any existing values and replace them by entering the path value `/wp`.
+
+Wordpress Core files remain read-only, with the exception of the `/wp/config` folder where you'll have write permissions.
+
+### (Recommended) Modify wp-config to allow plugin and theme downloads.
+Wordpress core files support editing wp-config settings via  `/wp/config` folder.
+
+By default, the WordPress installation does *not* allow to install new plugins or themes via wp-admin interface. This can be changed by modifying the wp config files.    
+In `/wp/config/wp-config-defaults.php` set the DISALLOW_FILE_MODS setting to *false*:
+```bash
+    if ( ! defined( 'DISALLOW_FILE_MODS' ) ) {
+        define( 'DISALLOW_FILE_MODS', false );
+    }
+```
+
+### (Recommeded) Edit .gitignore to exclude all plugins and themes except the one bing developed
+
+Ignore all plugins except the one being developed
+```bash
+    /plugins/*
+    !/plugins/copyright-date-block/**
+```
+Ignore all themes except the one being developed
+```bash
+    /themes/*
+    !/themes/twentytwentyfive/**
+```
+## Development folders
+
+By default the container is configured for plugin or theme development on top of a "plain vanilla" installation of Wordpress.    
+To that end, the repository provides folders for `/plugins/` and `/themes/` where you can place your code.
+
+### Creating a new Plugin
+```bash
+mkdir wp-content/plugins/my-plugin
+cd wp-content/plugins/my-plugin
+# Create your plugin files
+wp plugin activate my-plugin --allow-root
+```
+
+### Creating a new Theme
+```bash
+mkdir wp-content/themes/my-theme
+cd wp-content/themes/my-theme
+# Create style.css and index.php
+wp theme activate my-theme --allow-root
+```
+
+
+
+WordPress settings can be configured in .devcontainer/wp-setup.sh, i.e. the site name, and admin user account details. You can also specify a space-separated list of WordPress plugins to automatically install as well. By setting WP_RESET to true, the container will rebuild the WordPress instalation from scratch every time it is loaded.
+
+## References/documentation
 
 - Wordpress VIP Codespaces at Github: https://github.com/Automattic/vip-codespaces
 - Wordpress VIP Codespaces documentaiton: https://docs.wpvip.com/local-development/github-codespaces/  

@@ -4,6 +4,14 @@ node_modules
 npm-debug.log
 /vendor
 
+# Ignore all plugins except the one being developed
+/plugins/*
+!/plugins/copyright-date-block/**
+
+# Ignore all themes except the one being developed
+/themes/*
+!/themes/twentytwentyfive/**
+
 # Playwright
 /test-results/
 /playwright-report/
