@@ -126,13 +126,13 @@
         },
         "ghcr.io/automattic/vip-codespaces/phpmyadmin:latest": {
             // Set to false to disable phpMyAdmin.
-            "enabled": false
+            "enabled": true
         },
         // Debugging
         "ghcr.io/automattic/vip-codespaces/xdebug:latest": {
             // Set to true to enable Xdebug.
             // This setting can also be updated with CLI commands in the terminal.
-            "enabled": false,
+            "enabled": true,
             // Set Xdebug mode. Accepted value options are listed here: https://xdebug.org/docs/all_settings#mode
             "mode": "debug"
         },
