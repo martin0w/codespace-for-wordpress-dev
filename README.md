@@ -26,9 +26,12 @@ It sports a modular approach with various features that can be enabled, disabled
 
 Just create a codespace from this repo.
 
+## Forwarded ports
+- 80 - Wordpress frontend
+- 81 - phpMyAdmin database admin interface
+- 8025 - Mailpit admin interface
 
-<br><br>
-## What you'll get
+## Folder structure
 
 By default the container is configured for plugin or theme development on top of a "plain vanilla" installation of Wordpress.    
 To that end, the repository provides folders for /plugins/ and /themes/ where you can place your code.
