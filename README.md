@@ -97,6 +97,7 @@ Ignore all themes except the one being developed
 # References/documentation
 
 - Wordpress VIP Codespaces at Github: https://github.com/Automattic/vip-codespaces
-- Wordpress VIP Codespaces documentaiton: https://docs.wpvip.com/local-development/github-codespaces/  
+- Wordpress VIP Codespaces documentaiton: https://docs.wpvip.com/local-development/github-codespaces/
+- Wordpress CLI commands reference https://developer.wordpress.org/cli/commands/
 
 
