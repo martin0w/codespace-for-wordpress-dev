@@ -122,7 +122,7 @@
         // Tools
         "ghcr.io/automattic/vip-codespaces/mailpit:latest": {
             // Set to false to disable Mailpit.
-            "enabled": false
+            "enabled": true
         },
         "ghcr.io/automattic/vip-codespaces/phpmyadmin:latest": {
             // Set to false to disable phpMyAdmin.
