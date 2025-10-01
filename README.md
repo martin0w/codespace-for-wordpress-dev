@@ -99,6 +99,8 @@ Ignore all themes except the one being developed
 
 By default, MariaDB is installed with root access. 
 
+The codespace then adds the user wordpress@localhost with somewhat limited access rights to the wordpress database only. Both Wordpress and phpMyAdmin will use wordpress@localhost to acces the database. While this is ok in Wordpress, it will somewhat limit one's ability to admin the database, so you should extend the GRANT PRIVILEDGES for wordpress@localhost user. 
+
 First log into your MySQL/MariaDB server as a root user using the mysql client. Type the following command:
 ```bash
 mysql -u root -p
@@ -116,9 +118,14 @@ Finding out user rights
 SELECT User, Db, Host from mysql.db;
 ```
 
+Get current MySQL user
+```bash
+SELECT USER();;
+```
+
 Find the privilege(s) granted to a particular MySQL user
 ```bash
-show grants for 'wordpress'@'localhost';
+SHOW GRANTS for 'wordpress'@'localhost';
 ```
 
 Create new user
@@ -136,6 +143,7 @@ Now, the break down.
 - \*.\* - This instructions MySQL to apply these rights for use in all databases. You can replace the * with specific table names or store routines if you wish.
 - TO 'user'@'hostname' - 'user' is the username of the user account you are creating. Note: You must have the single quotes in there. 'hostname' tells MySQL what hosts the user can connect from. If you only want it from the same machine, use localhost
 - IDENTIFIED BY 'password' - As you would have guessed, this sets the password for that user.
+
 
 
 
