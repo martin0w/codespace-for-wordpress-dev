@@ -97,14 +97,16 @@ Ignore all themes except the one being developed
 <br><br>
 # Managing MariaDB
 
-By default, MariaDB is installed with root access. 
+By default, MariaDB is installed with root access. The user 'root' requires no password.
 
-The codespace then adds the user wordpress@localhost with somewhat limited access rights to the wordpress database only. Both Wordpress and phpMyAdmin will use wordpress@localhost to acces the database. While this is ok in Wordpress, it will somewhat limit one's ability to admin the database, so you should extend the GRANT PRIVILEDGES for wordpress@localhost user. 
+The codespace then creates a 'wordpress' database and adds the user wordpress@localhost, with (gently limited) access rights to that database. 
+Both Wordpress and phpMyAdmin will use wordpress@localhost to acces the database. While this is ok in Wordpress, it will somewhat limit one's ability to admin the database, so you should extend the GRANT PRIVILEDGES for wordpress@localhost user. 
 
 First log into your MySQL/MariaDB server as a root user using the mysql client. Type the following command:
 ```bash
 mysql -u root -p
-// ...or: 
+# (if prompted for password, just hit *Enter*)
+# ...or: 
 mysql -u root -h localhost -p mysql
 ```
 
@@ -145,11 +147,25 @@ Now, the break down.
 - IDENTIFIED BY 'password' - As you would have guessed, this sets the password for that user.
 
 <br><br>
+# Importing test data
+
+The codespace comes with a predefined data set to load your dfatabase with, you you can upload your own .sql database exports if you like.
+
+Any .sql data files should be placed in .devcontainer/mysql folder.
+
+To restore (or reset) the wordpress database from an .sql file:
+
+```bash
+mysql -u root -p < .devcontainer/mysql/data.sql
+# (if prompted for password, just hit *Enter*)
+```
+
+<br><br>
 # phpMyAdmin
 
 When enabled, phpMyAdmin will be installed in a password-protected folder with id = *vipgo* and pwd=<randomly generated password>.
 
-Once accessed, phpMyAdmin will automatically login to the database *wordpress* as user *wordpress@localhost*. That's why, in the "databases" tab, phpMyAdmin will only display 'wordpress' as available database. 
+Once accessed, phpMyAdmin will automatically connect to the database *wordpress* as user *wordpress@localhost*. 
 
 If needed, you can increase the priviledges of user *wordpress@localhost*, see section **"Managing MariaDB"** for description how to GRANT user priviledges. This, however, will not extend the database list in phpMyAdmin to other databases that *wordpress@localhost* may be authorized to use. This is because the config.inc.php of phpMYAdmin is configured with only_db option.
 
@@ -163,7 +179,6 @@ $cfg['Server']['only_db'] = 'wordpress';
 ```
 
 Unfortunately, there's no easy way to change this. In VIP Codespaces, phpMyAdmin installation is part of a preconfigured feature bundled into the container image, and its files are not exposed in the workspace by default.
-
 
 
 
