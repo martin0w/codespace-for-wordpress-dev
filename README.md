@@ -149,9 +149,18 @@ Now, the break down.
 
 When enabled, phpMyAdmin will be installed in a password-protected folder with id = *vipgo* and pwd=<randomly generated password>.
 
-Once accessed, phpMyAdmin will automatically login to the database 'wordpress' as user wordpress@localhost. That's why, in the "databases" tab, phpMyAdmin will only display 'wordpress' as available database. 
+Once accessed, phpMyAdmin will automatically login to the database *wordpress* as user *wordpress@localhost*. That's why, in the "databases" tab, phpMyAdmin will only display 'wordpress' as available database. 
 
-If needed, you can increase the priviledges of user wordpress@localhost, see "Managing MariaDB" for description how to GRANT user priviledges. This, however, will not extend the database list in phpMyAdmin to other databases that wordpress@localhost may be authorized to use.
+If needed, you can increase the priviledges of user *wordpress@localhost*, see section **"Managing MariaDB"** for description how to GRANT user priviledges. This, however, will not extend the database list in phpMyAdmin to other databases that *wordpress@localhost* may be authorized to use. This is because the config.inc.php of phpMYAdmin is configured with only_db option.
+
+
+```bash 
+/* phpMyAdmin configuration snippet */
+
+$cfg['Console']['Mode'] = 'collapse';
+$cfg['Server']['hide_db'] = '';
+$cfg['Server']['only_db'] = 'wordpress';
+```
 
 
 
