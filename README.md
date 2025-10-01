@@ -137,6 +137,8 @@ Now, the break down.
 - TO 'user'@'hostname' - 'user' is the username of the user account you are creating. Note: You must have the single quotes in there. 'hostname' tells MySQL what hosts the user can connect from. If you only want it from the same machine, use localhost
 - IDENTIFIED BY 'password' - As you would have guessed, this sets the password for that user.
 
+
+
 <br><br>
 # References/documentation
 
