@@ -120,7 +120,7 @@ SELECT User, Db, Host from mysql.db;
 
 Get current MySQL user
 ```bash
-SELECT USER();;
+SELECT USER();
 ```
 
 Find the privilege(s) granted to a particular MySQL user
@@ -147,7 +147,7 @@ Now, the break down.
 <br><br>
 # phpMyAdmin
 
-When enabled, phpMyAdmin will be installed in a password-protected folder with id = vipgo and pwd=<randomly generated password>.
+When enabled, phpMyAdmin will be installed in a password-protected folder with id = *vipgo* and pwd=<randomly generated password>.
 
 Regardless of the login, phpMyAdmin will access the database as wordpress@localhost. See "Managing MariaDB" for note about database access priviledges of wordpress@localhost. 
 
