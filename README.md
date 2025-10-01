@@ -162,7 +162,7 @@ $cfg['Server']['hide_db'] = '';
 $cfg['Server']['only_db'] = 'wordpress';
 ```
 
-
+Unfortunately, there's no easy way to change this. In VIP Codespaces, phpMyAdmin installation is part of a preconfigured feature bundled into the container image, and its files are not exposed in the workspace by default.
 
 
 
