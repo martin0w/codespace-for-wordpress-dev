@@ -95,6 +95,22 @@ Ignore all themes except the one being developed
 ```
 
 <br><br>
+# Sass
+
+Sass comes pre-installed via the following directive in devcontainer.json:
+
+```bash
+"postCreateCommand": "npm install -g sass",
+```
+
+You can then use Sass like this:
+
+```bash
+sass src/styles.scss dist/styles.css
+```
+
+
+<br><br>
 # Managing MariaDB
 
 By default, MariaDB is installed with root access. The user 'root' requires no password.
