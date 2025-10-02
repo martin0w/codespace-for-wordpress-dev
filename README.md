@@ -103,7 +103,7 @@ Sass comes pre-installed via the following directive in devcontainer.json:
 "postCreateCommand": "npm install -g sass",
 ```
 
-You can then use Sass like this:
+You can then use Sass lmysqlike this:
 
 ```bash
 sass src/styles.scss dist/styles.css
